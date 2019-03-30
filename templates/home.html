@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style type="text/css">
+            body {
+                font-family: Helvetica, sans-serif;
+            }
+
+            h1 {
+                text-align: center;
+                font-weight: bold;
+            }
+
+            .container {
+                margin: auto;
+                width: 30%;
+                padding: 20px;
+                background-color: #cfe5f0;
+                border-radius: 20px;
+            }
+
+            form {
+                margin: 0 auto;
+                width: 80%;
+                padding-top: 15px;
+            }
+
+            .error-msg {
+                color: red;
+                font-size: .8em;
+            }
+
+            td {
+                padding: 10px 5px;
+            }
+
+            input {
+                border: 0px;
+                width: 100%;
+                padding: 5px;
+            }
+
+            #button {
+                background-color: blue;
+                font-size: 1.1em;
+                color: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+        {% block content %}
+        <h1>{{message}}</h1>
+        <div class="container">
+        <form method="POST">
+            <table>
+                <tr>
+                    <td><label for="username">Username: </label></td>
+                    <td><input type="text" name="username" value="{{username}}"/><p class="error-msg">{{name_error}}</p></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password: </label></td>
+                    <td><input type="password" name="password" /><p class="error-msg">{{password_error}}</p></td>
+                </tr>
+                <tr>
+                    <td><label for="verify-password">Verify Password: </label></td>
+                    <td><input type="password" name="verify-password" /><p class="error-msg">{{valid_pass_error}}</p></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email: </label></td>
+                    <td><input type="text" name="email" value="{{email}}" /><p class="error-msg">{{email_error}}</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Sign Up!" id="button" /></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        {% endblock %}
+    </body>
+</html>
