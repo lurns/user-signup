@@ -20,6 +20,8 @@ def validate_info(data):
 
 def is_email(email):
     if '@' in email and '.' in email:
+        if ' ' in email:
+            return False
         return True
     else:
         return False
