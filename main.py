@@ -57,8 +57,9 @@ def validate_user():
     elif valid_pass != password:
         valid_pass_error = "Please make sure both password fields match"
 
-    if not is_email(email):
-        email_error = "Please enter a valid email"
+    if email != '':
+        if not is_email(email):
+            email_error = "Please enter a valid email"
 
     if not name_error and not password_error and not valid_pass_error and not email_error:
         return render_template('welcome.html', title="Welcome!", message="Welcome, ", username=username)
